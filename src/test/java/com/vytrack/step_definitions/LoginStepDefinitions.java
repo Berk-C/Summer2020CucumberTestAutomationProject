@@ -12,7 +12,7 @@ public class LoginStepDefinitions {
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-        Driver.getDriver().get("http://qa1.vytrack.com");
+        Driver.getDriver().get("http://qa2.vytrack.com");
     }
 
     @When("user logs in")
@@ -29,6 +29,12 @@ public class LoginStepDefinitions {
         Assert.assertEquals("Title is not correct!", expected, actual);
         System.out.println("I see the Dashboard page!");
         Driver.closeDriver();
+    }
+
+    @Then("user should see {string} page")
+    public void user_should_see_page(String string) {
+        String actual = loginPage.getPageSubTitleText().trim();
+        Assert.assertEquals("Page title is not correct!", string, actual);
     }
 
     //When user logs in as a "driver" --> public void user_logs_in_as_a(String string) -> loginPage.login(string); -> public void login(String role) { if role == "" do this..}
