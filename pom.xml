@@ -57,7 +57,7 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-                                <param>**/cucumber*.json</param>
+                                <param>**/*.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>
